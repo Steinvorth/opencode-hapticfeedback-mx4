@@ -6,15 +6,17 @@
 
 ## What Was Built
 - Feature 1: Public plugin entrypoint in `src/index.js` with exported `MxMasterHapticsPlugin` and default export.
-- Feature 2: npm package metadata in root `package.json` to allow package publishing and OpenCode plugin installation.
+- Feature 2: npm package metadata in root `package.json` to allow package publishing and OpenCode plugin installation, starting at version `0.0.1`.
 - Feature 3: Updated README with public installation flow and publishing instructions.
 - Feature 4: Added MIT license file for open distribution.
+- Feature 5: Added root `CHANGELOG.md` for explicit version tracking.
 
 ## Key Files & Structure
 - `src/index.js`: Publishable OpenCode plugin implementation with lifecycle event hooks and haptic mapping.
 - `package.json`: Package identity and distribution metadata for npm.
 - `README.md`: Public install guide, verification steps, event map, and publish steps.
 - `LICENSE`: MIT license for public usage.
+- `CHANGELOG.md`: Version history and release notes.
 
 ## How It Works
 - Data flow: User installs package in OpenCode config -> OpenCode loads plugin entrypoint from package -> plugin listens to OpenCode events -> plugin calls HapticWebPlugin endpoint -> MX Master 4 haptic response.
@@ -24,6 +26,7 @@
 ## Setup & Usage
 - Prereqs: npm account for publishing, HapticWebPlugin installed for runtime testing, MX Master 4 hardware.
 - Run: Add `opencode-hapticfeedback-mx4@latest` to `plugin` array in OpenCode config and restart OpenCode.
+- Publish note: npm publish requires 2FA OTP (or a granular token with bypass 2FA publish permission).
 
 ## Testing
 - How to run tests:
@@ -39,3 +42,4 @@
 - Phase 1: Researched public plugin distribution model and reference plugin structure.
 - Phase 2: Added publishable source entrypoint and package metadata.
 - Phase 3: Updated README for public install and publishing workflow.
+- Phase 4: Added `0.0.1` release tracking and attempted npm publish (blocked pending npm 2FA requirement).

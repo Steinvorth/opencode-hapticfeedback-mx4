@@ -14,6 +14,16 @@ Add this plugin to your OpenCode config:
 
 Restart OpenCode.
 
+Current release: `0.0.1`
+
+Alternative install directly from GitHub:
+
+```json
+{
+  "plugin": ["github:emi/opencode-hapticfeedback-mx4#v0.0.1"]
+}
+```
+
 If you want to test before npm publish, use the local repo path in `plugin` instead.
 
 ## Quick Start
@@ -70,13 +80,19 @@ Environment variables (optional):
 
 This repository now includes a public package entrypoint at `src/index.js` and `package.json`.
 
-1. Choose your final npm package name in `package.json`.
+1. Ensure version is updated in `package.json` and `CHANGELOG.md`.
 2. Login to npm:
    - `npm login`
 3. Publish:
-   - `npm publish --access public`
+   - `npm publish`
 4. Tag a release in GitHub (recommended):
-   - `git tag v1.0.0 && git push --tags`
+   - `git tag v0.0.1 && git push --tags`
+
+Version tracking policy:
+
+- Patch (`0.0.x`): bug fixes and non-breaking behavior tweaks
+- Minor (`0.x.0`): new non-breaking event mappings or config options
+- Major (`x.0.0`): breaking changes to config or behavior defaults
 
 After publishing, other users can install with:
 
