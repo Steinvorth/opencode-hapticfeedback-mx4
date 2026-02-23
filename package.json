@@ -1,0 +1,21 @@
+{
+  "name": "opencode-hapticfeedback-mx4",
+  "version": "1.0.0",
+  "description": "OpenCode plugin for Logitech MX Master 4 haptic feedback via HapticWebPlugin",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "logitech",
+    "mx-master-4",
+    "haptics"
+  ],
+  "license": "MIT"
+}

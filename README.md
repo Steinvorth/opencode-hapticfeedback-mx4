@@ -1,18 +1,31 @@
 # opencode-hapticfeedback-mx4
 
-OpenCode plugin for Logitech MX Master 4 haptic feedback. It maps OpenCode lifecycle events to haptic waveforms through HapticWebPlugin.
+Public OpenCode plugin for Logitech MX Master 4 haptic feedback. It maps OpenCode lifecycle events to haptic waveforms through HapticWebPlugin.
+
+## Install (Public Plugin)
+
+Add this plugin to your OpenCode config:
+
+```json
+{
+  "plugin": ["opencode-hapticfeedback-mx4@latest"]
+}
+```
+
+Restart OpenCode.
+
+If you want to test before npm publish, use the local repo path in `plugin` instead.
 
 ## Quick Start
 
-1. Install Bun (required by OpenCode plugin runtime in this project).
-2. Connect Logitech MX Master 4.
-3. Ensure Logi Options+ and Logi Plugin Service are running.
-4. Install HapticWebPlugin:
+1. Connect Logitech MX Master 4.
+2. Ensure Logi Options+ and Logi Plugin Service are running.
+3. Install HapticWebPlugin:
    - https://haptics.jmw.nz/install
    - or releases: https://github.com/fallstop/HapticWebPlugin/releases
-5. Restart OpenCode in this repository.
+4. Restart OpenCode.
 
-OpenCode auto-loads project plugins from `.opencode/plugins/`, so no extra plugin entry is required.
+The haptics service should run at `https://local.jmw.nz:41443`.
 
 ## Verification
 
@@ -52,3 +65,23 @@ Environment variables (optional):
 
 - The plugin sends non-blocking HTTP POST calls to `/haptic/{waveform}` with an empty body.
 - If the local haptics service is unavailable, OpenCode continues running and logs warnings via `client.app.log`.
+
+## Publish This Plugin
+
+This repository now includes a public package entrypoint at `src/index.js` and `package.json`.
+
+1. Choose your final npm package name in `package.json`.
+2. Login to npm:
+   - `npm login`
+3. Publish:
+   - `npm publish --access public`
+4. Tag a release in GitHub (recommended):
+   - `git tag v1.0.0 && git push --tags`
+
+After publishing, other users can install with:
+
+```json
+{
+  "plugin": ["opencode-hapticfeedback-mx4@latest"]
+}
+```
